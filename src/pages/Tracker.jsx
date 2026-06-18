@@ -49,11 +49,16 @@ function Tracker() {
   };
 
   return (
-    <div className="dashboard-layout">
-      <div className="tracker-container">
-        <h1 className="tracker-title">Finance Tracker</h1>
+  <div className="dashboard-layout">
+    <h1 className="tracker-title">Finance Tracker</h1>
 
-        <button className="add-btn" onClick={() => setShowForm(!showForm)}>
+    <div className="dashboard-content">
+      {/* LEFT SIDE */}
+      <div className="left-panel">
+        <button
+          className="add-btn"
+          onClick={() => setShowForm(!showForm)}
+        >
           {showForm ? "Close Form" : "+ Add Transaction"}
         </button>
 
@@ -61,7 +66,6 @@ function Tracker() {
           <div className="form-container">
             <div className="form-group">
               <label>Amount</label>
-
               <input
                 className="input-field"
                 name="amount"
@@ -73,7 +77,6 @@ function Tracker() {
 
             <div className="form-group">
               <label>Category</label>
-
               <input
                 className="input-field"
                 name="category"
@@ -82,9 +85,9 @@ function Tracker() {
                 onChange={handleChange}
               />
             </div>
+
             <div className="form-group">
               <label>Type</label>
-
               <select
                 className="input-field"
                 name="type"
@@ -100,8 +103,8 @@ function Tracker() {
               <label>Date</label>
               <input
                 className="input-field"
-                name="date"
                 type="date"
+                name="date"
                 value={form.date}
                 onChange={handleChange}
               />
@@ -123,45 +126,64 @@ function Tracker() {
             </button>
           </div>
         )}
+      </div>
 
+      {/* RIGHT SIDE */}
+      <div className="right-panel">
         <div className="card">
           <h3 className="card-title">Recent Transactions</h3>
-          <p className="card-subtitle">Your latest expenses</p>
+          <p className="card-subtitle">Transaction History</p>
 
           <div className="transaction-list">
             {transactions.length === 0 ? (
               <p>No transactions yet</p>
             ) : (
-              transactions.map((t) => (
-                <div key={t.id} className="transaction-card">
-                  <p className="transaction-info">
-                    <b>₹{t.amount}</b>
-                  </p>
-                  <p className="transaction-info">
-                    {t.category} | {t.type}
-                  </p>
-                  <p className="transaction-info">{t.date}</p>
-                  <p className="transaction-info">{t.note}</p>
+              [...transactions]
+                .reverse()
+                .map((t) => (
+                  <div key={t.id} className="transaction-card">
+                    <div className="transaction-header">
+                      <div>
+                        <h4>₹{t.amount}</h4>
+                        <p>{t.category}</p>
+                      </div>
 
-                  <button
-                    className="delete-btn"
-                    onClick={() => {
-                      const updated = transactions.filter(
-                        (item) => item.id !== t.id,
-                      );
-                      setTransactions(updated);
-                    }}
-                  >
-                    Delete
-                  </button>
-                </div>
-              ))
+                      <span
+                        className={`transaction-badge ${
+                          t.type === "income"
+                            ? "income"
+                            : "expense"
+                        }`}
+                      >
+                        {t.type}
+                      </span>
+                    </div>
+
+                    <div className="transaction-body">
+                      <p>{t.note}</p>
+                      <p className="date">{t.date}</p>
+                    </div>
+
+                    <button
+                      className="delete-btn"
+                      onClick={() => {
+                        setTransactions(
+                          transactions.filter(
+                            (item) => item.id !== t.id
+                          )
+                        );
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                ))
             )}
           </div>
         </div>
       </div>
     </div>
-  );
-}
-
+  </div>
+);
+};
 export default Tracker;

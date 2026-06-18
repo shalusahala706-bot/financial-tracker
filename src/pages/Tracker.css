@@ -1,294 +1,178 @@
 .dashboard-layout {
   min-height: 100vh;
-  background: #f5f7fb;
-  padding: 30px;
-}
-
-.tracker-container {
-  max-width: 900px;
-  margin: auto;
+  padding: 40px;
+  background: #f4f6f9;
+  font-family: "Inter", sans-serif;
+  color: #1f2937;
 }
 
 .tracker-title {
   text-align: center;
-  color: #14213d;
-  font-size: 36px;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 25px;
+  color: #1e3a8a;
 }
 
+.dashboard-content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
 
-/* Buttons */
-.add-btn {
-  display: block;
-  margin: 0 auto 25px auto;
-  background: #14213d;
-  color: white;
-  border: none;
-  padding: 14px 28px;
-  border-radius: 12px;
-  font-size: 16px;
+/* Panels */
+.left-panel,
+.right-panel {
+  flex: 1;
+}
+
+/* Card & Form */
+.form-container,
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.card-title {
+  font-size: 1.4rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
+  color: #1e3a8a;
 }
 
-
-.add-btn:hover {
-  background: #1f3a70;
-  transform: translateY(-2px);
+.card-subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 20px;
 }
 
-
-/* Form Box */
-.form-container {
-  background: white;
-  padding: 25px;
-  border-radius: 18px;
-  margin-bottom: 30px;
-
-  box-shadow: 
-    0 10px 25px rgba(0,0,0,0.08);
-
-  animation: slideDown 0.3s ease;
-}
-
-
-/* Form Animation */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* Input Group */
+/* Form */
 .form-group {
   margin-bottom: 18px;
 }
 
-
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  text-align: left;
-
-  color: #14213d;
   font-weight: 600;
+  color: #374151;
+  text-align: left;
 }
 
-
-/* Inputs */
 .input-field {
-
   width: 100%;
-  padding: 13px;
-
-  border: 1px solid #d8dce5;
+  padding: 12px;
   border-radius: 10px;
-
+  border: 1px solid #d1d5db;
   font-size: 15px;
-
-  outline: none;
-
-  box-sizing: border-box;
-
-  transition: 0.3s;
+  transition: border-color 0.2s ease;
 }
-
 
 .input-field:focus {
-
-  border-color: #14213d;
-
-  box-shadow:
-    0 0 0 3px rgba(20,33,61,0.12);
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
-
-
-/* Transaction Card */
-.card {
-
-  background:white;
-
-  padding:25px;
-
-  border-radius:18px;
-
-  box-shadow:
-  0 10px 25px rgba(0,0,0,0.08);
-
+select.input-field {
+  height: 44px;
 }
 
-
-/* Card Header */
-.card-title {
-
-  margin:0;
-
-  color:#14213d;
-
-  font-size:24px;
-
+/* Buttons */
+.add-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
 }
 
-
-.card-subtitle {
-
-  color:#777;
-
-  margin-top:8px;
-
-  margin-bottom:20px;
-
+.add-btn:hover {
+  background: #1e40af;
 }
 
-
-
-/* Transaction List */
-.transaction-list {
-
-  display:grid;
-
-  gap:15px;
-
-}
-
-
-
-/* Single Transaction */
-.transaction-card {
-
-  background:#f8faff;
-
-  padding:18px;
-
-  border-radius:14px;
-
-  border-left:5px solid #14213d;
-
-  transition:0.3s;
-
-}
-
-
-.transaction-card:hover {
-
-  transform:translateY(-3px);
-
-  box-shadow:
-  0 5px 15px rgba(0,0,0,0.08);
-
-}
-
-
-
-.transaction-info {
-
-  margin:6px 0;
-
-  color:#333;
-
-}
-
-
-
-.transaction-info b {
-
-  font-size:20px;
-
-  color:#14213d;
-
-}
-
-
-
-/* Delete Button */
 .delete-btn {
-
-  margin-top:12px;
-
-  background:#e63946;
-
-  color:white;
-
-  border:none;
-
-  padding:8px 18px;
-
-  border-radius:8px;
-
-  cursor:pointer;
-
-  font-weight:600;
-
-  transition:0.3s;
-
+  margin-top: 12px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
 }
-
 
 .delete-btn:hover {
-
-  background:#c1121f;
-
+  background: #b91c1c;
 }
 
-
-
-/* Desktop improvement */
-@media(min-width:900px){
-
-  .tracker-container{
-
-    max-width:1100px;
-
-  }
-
-
-  .form-container{
-
-    width:450px;
-
-    margin-left:auto;
-
-    margin-right:auto;
-
-  }
-
+/* Transactions */
+.transaction-list {
+  max-height: 650px;
+  overflow-y: auto;
 }
 
+.transaction-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: transform 0.2s ease;
+}
 
+.transaction-card:hover {
+  transform: translateY(-2px);
+}
 
-/* Mobile */
-@media(max-width:600px){
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .dashboard-layout{
+.transaction-header h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
 
-    padding:15px;
+.transaction-header p {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
 
-  }
+.transaction-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
 
+.income {
+  background: #dcfce7;
+  color: #15803d;
+}
 
-  .tracker-title{
+.expense {
+  background: #fee2e2;
+  color: #dc2626;
+}
 
-    font-size:28px;
+.transaction-body {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #374151;
+}
 
-  }
-
-
-  .form-container,
-  .card{
-
-    padding:18px;
-
-  }
-
-
+.date {
+  color: #9ca3af;
+  font-size: 13px;
 }
