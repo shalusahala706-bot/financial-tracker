@@ -18,12 +18,14 @@
   display: flex;
   gap: 30px;
   align-items: flex-start;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
 }
 
 /* Panels */
 .left-panel,
 .right-panel {
   flex: 1;
+  min-width: 300px; /* ensures readability on narrow screens */
 }
 
 /* Card & Form */
@@ -36,6 +38,7 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
+/* Typography */
 .card-title {
   font-size: 1.4rem;
   font-weight: 600;
@@ -175,4 +178,58 @@ select.input-field {
 .date {
   color: #9ca3af;
   font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dashboard-content {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-layout {
+    padding: 20px;
+  }
+
+  .tracker-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-content {
+    flex-direction: column; /* stack panels vertically */
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tracker-title {
+    font-size: 1.5rem;
+  }
+
+  .add-btn,
+  .delete-btn {
+    width: 100%; /* full-width buttons for mobile */
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .input-field {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .transaction-header h4 {
+    font-size: 1rem;
+  }
+
+  .transaction-header p,
+  .transaction-body {
+    font-size: 0.85rem;
+  }
 }
