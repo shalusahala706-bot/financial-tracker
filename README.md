@@ -1,5 +1,5 @@
 # Finanace-tracker
-a simple personal financ tracker built with React and Local storage.
+a simple personal finance tracker built with React and Local storage.
 
 # Features
 
@@ -13,6 +13,12 @@ React
 Vite
 Javascript
 Local storage
+
+# UI Overview
+
+Clean and minimal design
+Simple layout for easy tracking
+Fully responsive design
 
 
 
