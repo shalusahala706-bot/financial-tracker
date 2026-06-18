@@ -1,0 +1,293 @@
+.dashboard-layout {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 30px;
+}
+
+.tracker-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.tracker-title {
+  text-align: center;
+  color: #14213d;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+
+/* Buttons */
+.add-btn {
+  display: block;
+  margin: 0 auto 25px auto;
+  background: #14213d;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+
+.add-btn:hover {
+  background: #1f3a70;
+  transform: translateY(-2px);
+}
+
+
+/* Form Box */
+.form-container {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,0.08);
+
+  animation: slideDown 0.3s ease;
+}
+
+
+/* Form Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Input Group */
+.form-group {
+  margin-bottom: 18px;
+}
+
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #14213d;
+  font-weight: 600;
+}
+
+
+/* Inputs */
+.input-field {
+
+  width: 100%;
+  padding: 13px;
+
+  border: 1px solid #d8dce5;
+  border-radius: 10px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  transition: 0.3s;
+}
+
+
+.input-field:focus {
+
+  border-color: #14213d;
+
+  box-shadow:
+    0 0 0 3px rgba(20,33,61,0.12);
+}
+
+
+
+/* Transaction Card */
+.card {
+
+  background:white;
+
+  padding:25px;
+
+  border-radius:18px;
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,0.08);
+
+}
+
+
+/* Card Header */
+.card-title {
+
+  margin:0;
+
+  color:#14213d;
+
+  font-size:24px;
+
+}
+
+
+.card-subtitle {
+
+  color:#777;
+
+  margin-top:8px;
+
+  margin-bottom:20px;
+
+}
+
+
+
+/* Transaction List */
+.transaction-list {
+
+  display:grid;
+
+  gap:15px;
+
+}
+
+
+
+/* Single Transaction */
+.transaction-card {
+
+  background:#f8faff;
+
+  padding:18px;
+
+  border-radius:14px;
+
+  border-left:5px solid #14213d;
+
+  transition:0.3s;
+
+}
+
+
+.transaction-card:hover {
+
+  transform:translateY(-3px);
+
+  box-shadow:
+  0 5px 15px rgba(0,0,0,0.08);
+
+}
+
+
+
+.transaction-info {
+
+  margin:6px 0;
+
+  color:#333;
+
+}
+
+
+
+.transaction-info b {
+
+  font-size:20px;
+
+  color:#14213d;
+
+}
+
+
+
+/* Delete Button */
+.delete-btn {
+
+  margin-top:12px;
+
+  background:#e63946;
+
+  color:white;
+
+  border:none;
+
+  padding:8px 18px;
+
+  border-radius:8px;
+
+  cursor:pointer;
+
+  font-weight:600;
+
+  transition:0.3s;
+
+}
+
+
+.delete-btn:hover {
+
+  background:#c1121f;
+
+}
+
+
+
+/* Desktop improvement */
+@media(min-width:900px){
+
+  .tracker-container{
+
+    max-width:1100px;
+
+  }
+
+
+  .form-container{
+
+    width:450px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+  }
+
+}
+
+
+
+/* Mobile */
+@media(max-width:600px){
+
+  .dashboard-layout{
+
+    padding:15px;
+
+  }
+
+
+  .tracker-title{
+
+    font-size:28px;
+
+  }
+
+
+  .form-container,
+  .card{
+
+    padding:18px;
+
+  }
+
+
+}
