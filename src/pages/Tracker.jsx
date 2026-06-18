@@ -61,6 +61,7 @@ function Tracker() {
         >
           {showForm ? "Close Form" : "+ Add Transaction"}
         </button>
+        <br /><br />
 
         {showForm && (
           <div className="form-container">
